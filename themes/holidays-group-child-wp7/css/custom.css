@@ -1,0 +1,58 @@
+
+#submit {
+  background: #27ae60;
+}
+
+#get-directions{
+  display:none;
+}
+
+div.sslplaceholder{
+  position:fixed;
+  right:0;top:90%;
+}
+
+.testimonials {
+  margin:0 !important;
+}
+display-row {
+  padding: 5px;
+  border: 1px solid #29333d;
+}
+
+.front-text {
+  margin-top:15px;
+}
+
+.background-front{
+  background: #efefef !important;
+}
+.vctextstyle{
+  line-height: 80%;
+  position: relative;
+  bottom: 5px;
+  width: 250px;
+  color: #fff;
+  background: #29333d;
+  padding: 1px 5px 10px 5px;
+}
+
+p.copyleft{
+  float:left;
+}
+
+#main-content > section.page-builder.\32 20606 > div.container > section > div.vc_row.wpb_row.vc_row-fluid.top-bar-layout > div{
+  background: #27ae60;
+}
+
+/* visibility block in booking calender
+#hghide{
+  display:none;
+}
+#hgunhide:hover + #hghide{
+  display:block;
+  line-height: 1.2em !important;
+  font-size: 0.7em !important;
+  word-wrap: break-word;
+}
+*/

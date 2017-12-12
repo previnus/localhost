@@ -1,0 +1,12 @@
+/*
+Theme Name: Holidays Group
+Description:
+Author: Holidays Admin
+Template: realestate-7
+Version: 2.4.8
+*/
+
+/* NOTE: Parent stylesheet is loaded from functions.php not using @import */
+
+/* import custom css for child theme and booking calendar plugin */
+@import "css/custom.css";
