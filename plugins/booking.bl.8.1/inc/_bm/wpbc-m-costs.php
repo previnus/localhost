@@ -222,13 +222,43 @@ function wpbc_get_valuation_days_array( $booking_type, $days_array, $times_array
     
     $costs_depends = wpbc_get_resource_meta( $booking_type, 'costs_depends' );
 
-    if ( count( $costs_depends ) > 0 )        
-        $costs_depends = maybe_unserialize( $costs_depends[0]->value );        
-    else
-        return false;
-
-    if ( empty( $costs_depends ) ) return false;                                //FixIn: 7.0.1.4
-
+     if ( count( $costs_depends ) > 0 )
+        $costs_depends = maybe_unserialize( $costs_depends[0]->value );
+            else {
+            //    return false;
+            $costs_depends = array (
+                                      0 => 
+                                      array (
+                                        'active' => 'On',
+                                        'type' => '=',
+                                        'from' => 'LAST',
+                                        'to' => 14,
+                                        'cost' => 0,
+                                        'cost_apply_to' => 'fixed',
+                                        'season_filter' => 0,
+                                      ),
+                                      1 => 
+                                      array (
+                                        'active' => 'On',
+                                        'type' => 'summ',
+                                        'from' => 9,
+                                        'to' => 90,
+                                        'cost' => 90,
+                                        'cost_apply_to' => '%',
+                                        'season_filter' => 0,
+                                      ),
+                                      2 => 
+                                      array (
+                                        'active' => 'On',
+                                        'type' => '>',
+                                        'from' => 10,
+                                        'to' => 30,
+                                        'cost' => 90,
+                                        'cost_apply_to' => '%',
+                                        'season_filter' => 0,
+                                      ),
+                                    );
+            }
 
     $sortedDates = wpbc_get_sorted_days_array( implode( ',', $days_array ) );
     if ( !empty( $sortedDates ) ) {
