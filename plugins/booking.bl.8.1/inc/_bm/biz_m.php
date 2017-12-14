@@ -1519,7 +1519,7 @@ var wpdev_bk_season_filter = [];<?php
 
         $rate_meta_res = wpbc_get_resource_meta($type_id,'rates');         // Get all RATES for this bk resource
 
-        if ( count($rate_meta_res)>0 ) {
+if ( count($rate_meta_res)>0 ) {
             if ( is_serialized( $rate_meta_res[0]->value ) )  $rate_meta = unserialize($rate_meta_res[0]->value);
             else                                              $rate_meta = $rate_meta_res[0]->value;}
         else{
@@ -1631,6 +1631,7 @@ var wpdev_bk_season_filter = [];<?php
                                           ),
                                         );
             }
+
 
             $rate              = $rate_meta['rate'];                        // Rate values                           (key -> ID)
             $seasonfilter      = $rate_meta['filter'];                      // If this filter assign to rate On/Off  (key -> ID)
@@ -1808,7 +1809,7 @@ if (is_array($base_cost_with_rates)) {
                 }
             } // close foreach time cost array
 
- //debuge( array('$general_summ_array' =>  $general_summ_array )  );//die;
+// debuge( array('$general_summ_array' =>  $general_summ_array )  );//die;
 
             if ( count($general_hours_arr) > 0 ) {                          // summ all costs into one variable - its 1 day cost ( or cost between times), with already aplly day rates filters
                    if ($price_period == 'fixed')  $return_cost = $general_summ_array[0];
@@ -1834,7 +1835,8 @@ if (is_array($base_cost_with_rates)) {
             } else  return  $return_cost;    // Return day price after assigning of rates
             /**/
 
-        } // Finish R A T E S  work
+
+           // Finish R A T E S  work
 
 
         // There    N o    R A T E S  at all
