@@ -658,8 +658,8 @@ class wpdev_booking {
      
         $is_booking_resource_exist = apply_bk_filter('wpdev_is_booking_resource_exist',true, $bk_type, $is_echo );
         if (! $is_booking_resource_exist) {
-            if ( $is_echo )     echo 'Booking resource does not exist.' . ' [ID='.$bk_type.']';
-            return 'Booking resource does not exist.' . ' [ID='.$bk_type.']';
+            if ( $is_echo )     echo 'Ressources de réservation ' . ' [ID='.$bk_type.'] inexistante. Merci de nous contacter via le formulaire en bas de page pour connaitre la disponibilité.';
+            return 'Ressources de réservation ' . ' [ID='.$bk_type.'] inexistante. Merci de nous contacter via le formulaire en bas de page pour connaitre la disponibilité.';
         }
 
         make_bk_action('check_multiuser_params_for_client_side', $bk_type );

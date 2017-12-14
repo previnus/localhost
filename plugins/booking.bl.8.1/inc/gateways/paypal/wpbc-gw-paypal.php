@@ -161,11 +161,11 @@ class WPBC_Gateway_API_PAYPAL extends WPBC_Gateway_API  {
             
             if ( $payment_options[ 'is_sandbox' ] != 'On' ) {                   // Live
                 
-                ?><form action="https://www.paypal.com/cgi-bin/webscr" <?php echo $params['payment_form_target']; ?> method="post"><?php 
+                ?><form action="https://www.paypal.com/cgi-bin/webscr" <?php echo $params['payment_form_target']; ?> method="post" accept-charset="ISO-8859-1"><?php 
                 ?><input type="hidden" name="rm" value="2" /><?php 
 
             } else {                                                            // Sandbox
-                ?><form action="https://www.sandbox.paypal.com/cgi-bin/webscr" <?php echo $params['payment_form_target']; ?> method="post"><?php  
+                ?><form action="https://www.sandbox.paypal.com/cgi-bin/webscr" <?php echo $params['payment_form_target']; ?> method="post" accept-charset="ISO-8859-1"><?php  
                 ?><input type="hidden" name="rm" value="1" /><?php 
             }
             ?><input type="hidden" name="cmd" value="_xclick" /> <?php 
@@ -177,10 +177,10 @@ class WPBC_Gateway_API_PAYPAL extends WPBC_Gateway_API  {
         } else {                                                                // Paypal Pro Hosted Solution
 
             if ( $payment_options[ 'is_sandbox' ] != 'On' ) {                   // Live
-                ?><form action="https://securepayments.paypal.com/acquiringweb?cmd=_hosted-payment" <?php echo $params['payment_form_target']; ?> method="post"><?php 
+                ?><form action="https://securepayments.paypal.com/acquiringweb?cmd=_hosted-payment" <?php echo $params['payment_form_target']; ?> method="post" accept-charset="ISO-8859-1"><?php 
                 
             } else {                                                            // Sandbox
-                ?><form action="https://securepayments.sandbox.paypal.com/acquiringweb?cmd=_hosted-payment" <?php echo $params['payment_form_target']; ?> method="post"><?php 
+                ?><form action="https://securepayments.sandbox.paypal.com/acquiringweb?cmd=_hosted-payment" <?php echo $params['payment_form_target']; ?> method="post" accept-charset="ISO-8859-1"><?php 
             }
             
             ?><input type="hidden" name="cmd" value="_hosted-payment" /><?php 
@@ -210,7 +210,7 @@ class WPBC_Gateway_API_PAYPAL extends WPBC_Gateway_API  {
         }
 
         
-        echo "<strong>" . $params['gateway_hint'] . ': ' . $params[ 'cost_in_gateway_hint' ] . "</strong><br />";
+        echo "<strong>A payer maintenant : " . $params[ 'cost_in_gateway_hint' ] . "</strong><br><br>";
                                                                                 /*
                                                                                  if ( $params[ 'is_deposit' ] ) {
                                                                                      $today_day = date('m.d.Y')  ;
@@ -307,10 +307,10 @@ class WPBC_Gateway_API_PAYPAL extends WPBC_Gateway_API  {
         ?><input type="hidden" name="cancel_return" value="<?php echo $return_link . '&stats=FAILED' ; ?>" /><?php  
 
         
-        if ( $payment_options[ 'button_type' ] == 'custom' ) {
-            ?><input type="submit" class="btn" name="submit"  value="<?php echo $payment_options[ 'payment_button_title' ]; ?>" /><?php 
+         if ( $payment_options[ 'button_type' ] == 'custom' ) {
+            ?><input type="submit" id="gtmpaid" class="btn btn-success" name="submit"  value="<?php echo $payment_options[ 'payment_button_title' ]; ?>" /><?php
         } else {
-            ?><input type="image" src="<?php echo WPBC_PAYPAL_PAY_BUTTON_URL; ?>" name="submit" style="border:none;width:auto;" alt="<?php _e('Make payments with payPal - its fast, free and secure!' ,'booking'); ?>" /><?php 
+            ?><input type="image" id="gtmpaid" src="<?php echo WPBC_PAYPAL_PAY_BUTTON_URL; ?>" name="submit" style="border:none;width:auto;" alt="<?php _e('Make payments with payPal - its fast, free and secure!' ,'booking'); ?>" /><?php
         }
         
         ?></form></div><?php 

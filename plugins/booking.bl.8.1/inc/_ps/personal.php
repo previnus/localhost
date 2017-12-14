@@ -1505,7 +1505,7 @@ class wpdev_bk_personal   {
             }
 
             if ($class_att)
-                $atts .= ' class="' . trim($class_att) . '"';
+                $atts .= ' class="btn ' . trim($class_att) . '"';
 
                     // Value.
                     if (   (isset($this->processing_unit_tag)) && ($this->processing_unit_tag == $_POST['wpdev_unit_tag']) ) {
