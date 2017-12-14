@@ -1,0 +1,148 @@
+/*!
+ * Screets Live Chat - Admin chat options styles
+ * Author: @screetscom
+ *
+ * COPYRIGHT © 2016 Screets d.o.o. All rights reserved.
+ * This  is  commercial  software,  only  users  who have purchased a valid
+ * license  and  accept  to the terms of the  License Agreement can install
+ * and use this program.
+ */
+	
+/* App ID */
+input#screets-cx_app-id { width: 140px; }
+input#screets-cx_app-secret { width: 360px; }
+
+/* Some common elements in options */
+small.description { color: #ccc; }
+
+.schat-red { color: #e54045; }
+.schat-green { color: green; }
+.schat-grey { color: #bbb; }
+
+.schat-highlight { 
+	display: inline-block;
+	padding: 0 3px;
+	border-radius: 2px;
+	font-style: normal; 
+	background-color: #fff198; 
+}
+
+[class^="schat-ico-"]:before, [class*=" schat-ico-"]:before {
+	vertical-align: middle;
+}
+
+/**
+ * General structure 
+ */	
+
+ 	/*First row */
+ 	.titan-framework-panel-wrap .form-table tr.row-1 td,
+ 	.titan-framework-panel-wrap .form-table tr.row-1 th { padding-top: 30px; }
+	
+	.titan-framework-panel-wrap .form-table { margin: 0; }
+	.tf-upload .tf-image-preview { overflow: hidden; }
+
+	/* Row spacing */
+	.titan-framework-panel-wrap tr:not(.tf-heading) th, 
+	.titan-framework-panel-wrap tr:not(.tf-heading) td {
+		padding: 15px 20px;
+	}
+	
+	td.tf-note {
+		padding: 0 0 10px 0;
+	}
+	.tf-note .update-nag {
+		margin: 0;
+	}
+
+	/* Logos */
+	.form-table .schat-logo {
+		max-width: 16px;
+		height: auto;
+	}
+
+	/* Error */
+		.nav-tab-wrapper a.schat-error {
+			color: #e54045;
+		}
+		.nav-tab-wrapper a.schat-error:before {
+			content: '(!) ';
+		}
+
+		tr.schat-error th,
+		tr.schat-error td {
+			background-color: rgba(229, 64, 69, 0.1);
+		}
+
+		tr.schat-error input,
+		tr.schat-error textarea,
+		tr.schat-error select {
+			border-color: #e54045;
+		}
+
+input[type="text"].schat-success {
+	color: #48a225;
+	border-color: rgba( 72, 162, 37, 0.4 );
+}
+input[type="text"].schat-error {
+	color: #e54045;
+	border-color: #e54045;
+}
+
+/* License */
+	.schat-license-info {
+		display: block;
+		margin: 10px 0 15px 0;
+		padding: 10px 15px;
+		background-color: #f0f7ed;
+		border-radius: 4px;
+	}
+	.schat-license-name {
+		color: #48a225;
+		font-weight: 600;
+	}
+	.schat-license-notes {
+		display: block;
+		color: #777;
+		font-style: italic;
+	}
+	
+	.schat-license-error {
+		display: block;
+		margin: 10px 0 15px 0;
+		padding-left: 10px;
+		color: #e54045;
+		border-left: 1px solid #dedede;
+	}
+	
+	.schat-license-warning {
+		display: block;
+		margin: 10px 0 15px 0;
+		color: #ea8d11;
+	}
+
+.schat-domain {
+	display: block;
+	margin-top: 15px;
+	padding-bottom: 5px;
+}
+.schat-domain ul {
+	margin: 5px 0 0 15px;
+	padding: 0;
+	line-height: 1em;
+}
+.schat-domain ul li {
+	font-size: 13px;
+}
+/* Specific pages & cats */
+	.titan-framework-panel-wrap .form-table .schat-specific-pages td {
+		padding: 0 20px;
+	}
+	.titan-framework-panel-wrap .form-table .schat-specific-cats td {
+		padding: 10px 20px 20px 20px;
+	}
+
+/* Site logo option */
+	tr.row-5 td.tf-upload { padding-bottom: 0; }
+	tr.row-6 td.tf-checkbox { padding-bottom: 30px; }
+
