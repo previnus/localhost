@@ -1505,7 +1505,7 @@ class wpdev_bk_personal   {
             }
 
             if ($class_att)
-                $atts .= ' class="btn ' . trim($class_att) . '"';
+                $atts .= ' class="' . trim($class_att) . '"';
 
                     // Value.
                     if (   (isset($this->processing_unit_tag)) && ($this->processing_unit_tag == $_POST['wpdev_unit_tag']) ) {
@@ -1963,7 +1963,7 @@ class wpdev_bk_personal   {
 
             $html = '';
             if ($class_att)
-                $atts .= ' class="' . trim($class_att) . '"';
+                $atts .= ' class="btn ' . trim($class_att) . '"';
                     if (isset($matches[2]))
                         if ($matches[2])   $value = $this->strip_quote($matches[2]);
                     if (empty($value)) $value = __('Send' ,'booking');
